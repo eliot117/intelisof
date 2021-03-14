@@ -27,5 +27,23 @@
     "dependencies": {
         "@coreui/coreui": "^3.4.0",
         "admin-lte": "^3.1.0-rc"
+    },
+    "node":
+    {
+        "name": "obscure-anchorage-25235",
+        "description": "usando node",
+        "version": "1.0.0",
+        "engines": {
+          "node": "14.x"
+        }
+    },
+    "npm":
+    {
+        "name": "obscure-anchorage-25235",
+        "description": "a really cool app",
+        "version": "0.0.1",
+        "engines": {
+          "npm": "6.x"
+        }
     }
 }
