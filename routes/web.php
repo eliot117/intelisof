@@ -28,6 +28,17 @@ Auth::routes();
 
 Route::get('/', [HomeController::class,'index'])->name('sitio.principal');
 
+Route::get('/about', [HomeController::class,'about'])->name('about');
+
+Route::get('/team', [HomeController::class,'team'])->name('team');
+
+Route::get('/testimonial', [HomeController::class,'testimonial'])->name('testimonial');
+
+Route::get('/services', [HomeController::class,'services'])->name('services');
+Route::get('/portafolio', [HomeController::class,'portafolio'])->name('portafolio');
+Route::get('/blog', [HomeController::class,'blog'])->name('blog');
+Route::get('/contact', [HomeController::class,'contact'])->name('contact');
+
 Route::get('/admin', [AdminController::class, 'index'])->name('home');
 
 Route::resource('users', UsersController::class);

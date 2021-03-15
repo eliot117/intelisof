@@ -14,7 +14,7 @@
           <img src="{{ asset('/storage/profile/'.Auth::user()->profile) }}"class="img-circle elevation-2">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->lastname }}</a>
+          <a href="#" class="d-block">{{ Auth::user()->email }} </a>
         </div>
       </div>
 

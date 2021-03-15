@@ -104,7 +104,8 @@
           <li class="user-header bg-primary">
             <img src="{{ asset('/storage/profile/'.Auth::user()->profile) }}" class="img-circle elevation-2">
             <p>
-                {{ Auth::user()->name }} {{ Auth::user()->lastname }}
+                {{ Auth::user()->name }} {{ Auth::user()->lastname }} <br>
+
               <small>Creado el {{ Auth::user()->created_at }}</small>
             </p>
             <br><br><br>

@@ -10,9 +10,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'Eliot',
-            'lastname'=>'Anderson',
-            'email' => 'eliot@gmail.com',
+            'name' => 'Clara',
+            'lastname'=>'Isabel',
+            'email' => 'clara@gmail.com',
             'password' => bcrypt('12345678'),
         ])->assignRole('Admin');
     }
