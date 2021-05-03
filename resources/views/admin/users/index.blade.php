@@ -59,9 +59,45 @@ Usuarios registrados
       <th>Borrar</th>
     </tr>
     </tfoot>
-  </table>
+</table>
+
+<!-- delete Modal-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¿Seguro que quieres eliminar este usuario?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        </div>
+        <div class="modal-body">Seleccione "Eliminar".<br>
+            Nota: Asegurese de verificar cual borrar.</div>
+        <div class="modal-footer">
+        <button class="btn btn-primary" type="button" data-dismiss="modal">Cancelar</button>
+        @if(empty($user))
+            unset($user);
+        @else
+        <form method="POST" action="{{ route('users.destroy', $user->id) }}">
+            @method('DELETE')
+            @csrf
+            <input type="hidden" id="user_id" name="user_id" value="">
+            <a style="color: white;" class="btn btn-danger" onclick="$(this).closest('form').submit();">Eliminar</a>
+        </form>
+        @endif
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('js')
+<script>
+    $('#deleteModal').on('show.bs.modal', function (event) {
+            var button     = $(event.relatedTarget)
+            var user_id   = button.data('userid')
 
+            var modal = $(this)
+            modal.find('.modal-footer #user_id').val(user_id)
+        })
+</script>
 @endsection

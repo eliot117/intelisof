@@ -11,17 +11,18 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('admin.roles.index',compact('roles'));
+        return view('admin.roles.index',['roles' => $roles]);
     }
 
     public function create()
     {
-        //
+        return view('admin.roles.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $roles = Role::create($request->all());
+        return redirect()->route('roles.index');
     }
 
     public function show($id)
@@ -41,6 +42,7 @@ class RoleController extends Controller
 
     public function destroy($id)
     {
-        //
+        $roles = Role::findOrFail($id)->delete();
+        return redirect()->route('roles.index');
     }
 }

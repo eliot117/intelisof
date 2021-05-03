@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
         $user = User::create([
             'name' => 'Clara',
             'lastname'=>'Isabel',
-            'email' => 'clara@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
         ])->assignRole('Admin');
     }
